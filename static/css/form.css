@@ -1,0 +1,40 @@
+.form_main{
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+
+::placeholder {
+    color: #fff;
+    font-size: 1em;
+  }
+
+.kokuban {
+    position: relative;
+    margin: 1em auto;
+    padding: 1em;
+    width: 50%; /* ボックス幅 */
+    background: #006633; /* ボックス背景色 */
+    color: #fff; /* 文章色 */
+    border: 5px solid #C0C0C0; /* 枠線 */
+    border-radius: 2px; /* 角の丸み */
+    box-shadow: 0 0 5px #333, 0 0 5px #555 inset;
+   }
+   .kokuban::before,
+   .kokuban::after {
+    position: absolute;
+    content: '';
+    bottom: 0;
+   } 
+   .kokuban::before {
+    width: 20px;
+    right: 10px;
+    border: solid 3px #ff42a0; /*チョークピンク */
+    border-radius: 3px 2px 0 2px;
+   }
+   .kokuban::after {
+    width: 15px;
+    right: 45px;
+    border: solid 3px #fff; /*チョーク白 */
+    border-radius: 8px 5px 2px 5px;
+   }

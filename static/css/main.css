@@ -1,0 +1,41 @@
+html, body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+}
+
+#canvas {
+  position:fixed; 
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  background: #FFC7AF;
+}
+
+#body{
+  position:absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.header{
+  text-align: center;
+  background-color: #444444;
+  color: #FFFFFF;
+  top: 0;
+}
+
+.footer_right{
+  text-align: center;
+  background-color: #444444;
+  color: #FFFFFF;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}

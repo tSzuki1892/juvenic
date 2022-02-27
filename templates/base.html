@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang=”ja”>
+    <head>
+         <title>Index</title>
+            <meta charset=”utf8″/>
+            <link rel="stylesheet" href= "{{ staticfile('main.css') }}">
+            <link rel="stylesheet" href= "{{ staticfile('students_index.css') }}">
+            <link rel="stylesheet" href= "{{ staticfile('teacher_index.css') }}">
+            <link rel="stylesheet" href= "{{ staticfile('form.css') }}">
+
+</head>
+<body>
+
+    <main>
+        <canvas id ="canvas"></canvas>
+        <section id="body">
+        <header class="header">juvenic</header>
+        {% block content %}
+        {% endblock content %}
+        <footer class="footer_right">Copyright © 2022 Abukuma Education All Rights Reserved.</footer>
+        </section>
+    </main>
+</body>
+<script type=text/javascript src="{{ url_for('static', filename='js/script.js') }}"></script>
+</html>
+
