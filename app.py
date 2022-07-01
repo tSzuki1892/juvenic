@@ -36,12 +36,12 @@ from_email = 'juvenic1950@gmail.com'
 to_email = '1892jbr@gmail.com'
 to_email2 = 'howlingliverpool@gmail.com'
 account = 'juvenic1950@gmail.com'
-password = 'rwiveyxnxxxhtawc'
+password = 'XXXXXXXXXX'
 
 app.config['NAIL_SERVER'] = "smtp.gmail.com"
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USER_NAME'] = 'juvenic@outlook.jp'
-app.config['MAIL_USER_PASSWORD'] = 'rwiveyxnxxxhtawc'
+app.config['MAIL_USER_PASSWORD'] = 'XXXXXXXX'
 
 mail = Mail(app)
 
