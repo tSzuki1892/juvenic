@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="form_main">
+    <div class="form_head_img"><img class="students_img" src="{{ url_for('static', filename='/images/sky.png') }}"></div>
+    <div class="form_head_text">困っていること<br>
+        保護者や先生には<br>
+        話しにくい事<br>
+        相談してください<br>
+        あなたの明日が良くなるかもしません<br>
+    </div>
+    <!-- <div class="prev">
+        <button class="button-glow" type="button" class="btn_primary"><a href="/students">戻る</a></button>
+    </div>
+    <form class="students_form" method="POST">
+        <div class="field">
+            <div class="label label_name" for="name">お<ruby><rb>名前</rb><rt>なまえ</rt></ruby><br></div>
+            <input class="kokuban" id="students_form" type="text" name="name" placeholder="あなたのお名前を入力してください" required title="must be alphanumeric in 6-12 chars">
+        </div>
+        <div class="field">
+            <div class="label label_school" for="school" required><ruby><rb>学校</rb><rt>がっこう</rt></ruby><br></div>
+            <input class="kokuban" id="students_form" type="text" name="school" placeholder="学校の名前を入力してください" required>
+        </div>
+        <div class="field">
+            <div class="label label_year" for="year" required><ruby><rb>学年</rb><rt>がくねん</rt></ruby><br></div>
+            <input class="kokuban" id="students_form" type="text" name="yaer" placeholder="何年生ですか？" required>
+        </div>
+        <div class="field">
+            <div class="label label_message" for="message" required><ruby><rb>相談</rb><rt>そうだん</rt></ruby>したいこと<br></div>
+            <input class="kokuban kokuban_about" id="students_form" type="text" name="about" placeholder="気になっていることを書いてね" required>
+        </div>
+        <button class="button-glow" type="submit" class="btn_primary"><ruby><rb>送信</rb><rt>そうしん</rt></ruby></button>
+    </form> -->
+
+    <form class="students_form" method="POST">
+        <div class="field">
+            <div class="label label_name" for="name">お名前<br></div>
+            <input class="kokuban" id="students_form" type="text" name="name" placeholder="あなたのお名前を入力してください" required title="must be alphanumeric in 6-12 chars">
+        </div>
+        <div class="field">
+            <div class="label label_year" for="year" required>学年<br></div>
+            <!-- <input class="kokuban" id="students_form" type="text" name="yaer" placeholder="何年生ですか？" required> -->
+            <select class="kokuban" id="students_form" name="yaer" required>
+                <option value="">何年生ですか？</option>
+                <option value="1">1年生</option>
+                <option value="2">2年生</option>
+                <option value="3">3年生</option>
+            </select>
+        </div>
+        <div class="field">
+            <div class="label label_message" for="message" required>相談したい事<br></div>
+            <input class="kokuban kokuban_about" id="students_form" type="text" name="about" placeholder="気になっていることを書いてね" required>
+        </div>
+        <button class="button-glow" type="submit" class="btn_primary">送信</button>
+    </form>
+</div>
+{% endblock content %}
+<script>
+
+var formElement = document.getElementById('students_form');
+
+window.onload = function() {
+    formElement.reset();
+  }
+</script>

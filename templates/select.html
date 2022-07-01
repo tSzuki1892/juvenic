@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="select_top">
+    <div class="select_data">
+    <form method="POST">
+    <button class="button-glow" type="submit" class="btn_primary" name="getcsv">CSV</button>
+    <button class="button-glow" type="submit" class="btn_primary" name="tograph">グラフ</button>
+    </form>
+    </div>
+</div>
+
+    <div class="select_main">
+        <table class="form_select">
+            <thead>
+            <tr>
+                <th>学校名</th>
+                <th>今の気分</th>
+                <th>何について</th>
+                <th>学年</th>
+                <th>出席番号</th>
+                <th>相談内容</th>
+                <th>投稿時間</th>
+            </tr>
+            </thead>      
+        {% for form in forms %}
+            <tbody>
+            <tr>
+                <td>{{ form.school }}</td>
+                <td>{{ form.feeling }}</td>
+                <td>{{ form.what }}</td>
+                <td>{{ form.year }}</td>
+                <td>{{ form.number }}</td>
+                <td>{{ form.about }}</td>
+                <td>{{ form.post_time.strftime('%Y/%m/%d %H:%M:%S') }}</td>
+            </tr>
+            </tbody>
+        {% endfor %}
+        </table>
+    </div>
+{% endblock content %}

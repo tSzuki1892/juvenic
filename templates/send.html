@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="send_main">
+    <h1>メッセージを送信しました</h1>
+    <img class="send_img" src="{{ url_for('static', filename='/images/neko_send.jpg') }}"><br>
+    <!-- <input class="button-glow" type="button" value="戻る" onClick="location.href='students_form'" /> -->
+    <input class="button-glow" type="button" value="戻る" onclick="history.back()" />
+</div>
+{% endblock content %}

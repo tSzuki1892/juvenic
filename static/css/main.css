@@ -29,13 +29,58 @@ body{
   background-color: #444444;
   color: #FFFFFF;
   top: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.head_img{
+  height: 45px;
+  padding-right: 10px;
+}
+
+.form_head_img {
+  height: 20px;
+}
+
+.site_title{
+  font-size: 30px;
+}
+
+.logout{
+  padding-left: 10px;
 }
 
 .footer_right{
   text-align: center;
   background-color: #444444;
   color: #FFFFFF;
-  position: absolute;
-  bottom: 0;
   width: 100%;
+  position: fixed;
+  bottom: 0;
+  height: 25px;
+}
+
+.button-glow {
+  text-align: center;
+  cursor: pointer;
+  box-sizing: border-box;
+  display: inline-block;
+  width: 120px;
+  height: 60px;
+  font-size: 25px;
+  border-radius: 10px;
+  margin: 0 10px;
+  line-height: 1.5;
+  color: #fff;
+  font-weight: bold;
+  border: 1px solid #fff;
+  animation: 1s glow infinite alternate;
+  background: linear-gradient(#77a2ff, #447fff); /*　青 */
+  box-shadow: 0 0 10px 3px rgba(68, 127, 255, 0.5)
+}
+.button-glow:hover {
+  animation: 0.3s glow linear infinite alternate;
+}
+.button-glow:active, .button-glow:focus {
+  background: #447fff;
 }

@@ -7,20 +7,47 @@
             <link rel="stylesheet" href= "{{ staticfile('students_index.css') }}">
             <link rel="stylesheet" href= "{{ staticfile('teacher_index.css') }}">
             <link rel="stylesheet" href= "{{ staticfile('form.css') }}">
+            <link rel="stylesheet" href= "{{ staticfile('select.css') }}">
+            <link rel="stylesheet" href= "{{ staticfile('index.css') }}">
+            <link rel="stylesheet" href= "{{ staticfile('signup.css') }}">
+            <link rel="stylesheet" href= "{{ staticfile('login.css') }}">
+            <link rel="stylesheet" href= "{{ staticfile('send.css') }}">
+            <link rel="stylesheet" href= "{{ staticfile('select_survey_students.css') }}">
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 
-</head>
+            <!-- サーバー用に変更 
+            <link rel=stylesheet href="static/css/main.css">
+            <link rel="stylesheet" href= "{{ staticfile('students_index.css') }}">
+            <link rel="stylesheet" href= "{{ staticfile('teacher_index.css') }}">
+            <link rel=stylesheet href="static/css/form.css">
+            <link rel=stylesheet href="static/css/select.css">
+            <link rel="stylesheet" href= "{{ staticfile('index.css') }}">
+            <link rel="stylesheet" href= "{{ staticfile('signup.css') }}">
+            <link rel="stylesheet" href= "{{ staticfile('login.css') }}">
+            <link rel="stylesheet" href= "{{ staticfile('send.css') }}">
+            <link rel="stylesheet" href= "{{ staticfile('select_survey_students.css') }}">
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"> -->
+
+    </head>
 <body>
 
     <main>
         <canvas id ="canvas"></canvas>
         <section id="body">
-        <header class="header">juvenic</header>
+        <header class="header">
+            <img class="head_img" src="{{ url_for('static', filename='images/yuruneko.jpg') }}">
+            <div class="site_title">juvenic</div>
+            <!-- <div class="logout"><a href="">ログアウト</a></div> -->
+        </header>
         {% block content %}
         {% endblock content %}
-        <footer class="footer_right">Copyright © 2022 Abukuma Education All Rights Reserved.</footer>
+        
         </section>
+        
     </main>
+    <footer class="footer_right">Copyright © 2022 Abukuma Education All Rights Reserved.</footer>
 </body>
+
 <script type=text/javascript src="{{ url_for('static', filename='js/script.js') }}"></script>
 </html>
 

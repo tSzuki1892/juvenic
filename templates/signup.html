@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="signup_main">
+    <div class="signup_area">
+        <h1>学校登録</h1>
+    <form method="POST">
+        <table class="contact-table">
+        <tr>
+            <th class="form_title">県名</th>
+            <td class="form_body">
+              <input type="text" name="県名" class="form-text" />
+            </td>
+          </tr>
+          <tr>
+            <th class="form_title">学校名</th>
+            <td class="form_body">
+              <input type="text" name="学校名" class="form-text" />
+            </td>
+          </tr>
+          <tr>
+            <th class="form_title">メールアドレス</th>
+            <td class="form_body">
+              <input type="text" name="メールアドレス" class="form-text" />
+            </td>
+          </tr>
+          <tr>
+          <tr>
+            <th class="form_title">パスワード</th>
+            <td class="form_body">
+              <input type="text" name="パスワード" class="form-text" />
+            </td>
+          </tr>
+          <tr>
+            <th class="form_title">教材業者登録</th>
+            <td class="form_body">
+              <input type="text" name="教材業者登録" class="form-text" />
+            </td>
+          </tr></table>
+        <div class="submit_buttton">
+        <button class="button-glow" type="submit">新規登録</button>
+        </div>
+    </form>
+    </div>
+</div>
+{% endblock content %}

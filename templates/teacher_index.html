@@ -1,30 +1,29 @@
 {% extends "base.html" %}
 {% block content %}
-<body> 
-    <div class="teacher_main">
-        <div class="teacher_title">
-        タイトル未定
-        </div>
-        
-        <div class="teacher_about">
-        先生用項目
-        </div>
-        
-        <div class="teacher_menu_area">
-        <div class="teacher_menu_house">
-        <a href="" class="btn-circle-1d">アンケート連携</a>
-        </div>
-        <div class="teacher_menu_school">
-        <a href="" class="btn-circle-2d">あぶくまページ</a>
-        </div>
-        <div class="teacher_menu_other">
-        <a href="" class="btn-circle-3d">連絡事項</a>
-        </div>
-        </div>
-        
-        <div class="teacher_about">
-        物品関連はあぶくまページにて承ります。
-        </div>
-        
-        </div>
+<div class="teacher_main">
+    <div class="teacher_title">
+        <img class="title_img" src="{{ url_for('static', filename='/images/yuruneko.jpg') }}">
+        タイトルテキスト
+    </div>
+
+    <div class="teacher_about">
+        テキストA<br>テキストA<br>テキストA
+    </div>
+    
+    <div class="teacher_menu_area">
+    <div class="teacher_menu_about">
+        <a href="students_form" class="btn-circle-1d">連絡事項</a>
+    </div>
+    <div class="teacher_menu_other">
+        <a href="" class="btn-circle-3d">教材発注</a>
+    </div>
+    <div class="teacher_menu_survey">
+        <a href="select_survey_students" class="btn-circle-4d">アンケート</a>
+    </div>
+    </div>
+    
+    <div class="teacher_about">
+        テキストB
+    </div>
+</div>
 {% endblock content %}

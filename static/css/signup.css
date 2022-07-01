@@ -1,0 +1,51 @@
+.signup_main{
+    margin: 0 auto;
+    width: 960px;
+}
+
+h1{
+    text-align: center;
+}
+
+.contact-table {
+    width: 100%;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    background: #FFDBC9;
+}
+
+.form-title,
+.form-body {
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+
+
+th.form_title {
+    text-align: left;
+    width: 30%;
+    background: #C0C0C0;
+    padding-left: 5px;
+}
+
+.form-body {
+    width: 70%;
+}
+
+.form-text {
+    width: 100%;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    max-width: 600px;
+    margin-left: 10px;
+}
+
+.submit_buttton{
+    width:100%;
+    text-align: center;
+}

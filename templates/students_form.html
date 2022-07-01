@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+{% block content %}
+<script language="JavaScript" type="text/JavaScript">
+    function count_down(obj) {
+        var element = document.getElementById('count2');
+        var currentTextNum = obj.value.length;
+        element.innerHTML = '<p>あと' + (2000 - currentTextNum) + '文字入力できます。';
+
+        if (2000 - obj.value.length < 0) {
+            element.style.color = 'red';
+        } else {
+            element.style.color = 'black';
+        }
+    }
+
+    function check(){
+
+        if(window.confirm('送信してよろしいですか？')){ // 確認ダイアログを表示
+
+    return true; // 「OK」時は送信を実行
+
+    }
+    else{ // 「キャンセル」時の処理
+
+        window.alert('キャンセルされました'); // 警告ダイアログを表示
+        return false; // 送信を中止
+    }
+
+}
+</script>
+<div class="form_main">
+    <div class="form_head_img"><img class="students_img" src="{{ url_for('static', filename='/images/sky.png') }}"></div>
+    <div class="form_head_text"><ruby><rb>困</rb><rt>こま</rt></ruby>っていること<br>
+        <ruby><rb>保護者</rb><rt>ほごしゃ</rt>や<rb>先生</rb><rt>せんせい</rt>には</ruby><br>
+        <ruby><rb>話</rb><rt>はな</rt></ruby>しにくいこと<br>
+        <ruby><rb>相談</rb><rt>そうだん</rt></ruby>してください<br>
+        あなたの<ruby><rb>明日</rb><rt>あした</rt>が<rb>良</rb><rt>よ</rt>くなるかもしれません</ruby><br>
+    </div>
+    <!-- <div class="prev">
+        <button class="button-glow" type="button" class="btn_primary"><a href="/students">戻る</a></button>
+    </div>
+    <form class="students_form" method="POST">
+        <div class="field">
+            <div class="label label_name" for="name">お<ruby><rb>名前</rb><rt>なまえ</rt></ruby><br></div>
+            <input class="kokuban" id="students_form" type="text" name="name" placeholder="あなたのお名前を入力してください" required title="must be alphanumeric in 6-12 chars">
+        </div>
+        <div class="field">
+            <div class="label label_school" for="school" required><ruby><rb>学校</rb><rt>がっこう</rt></ruby><br></div>
+            <input class="kokuban" id="students_form" type="text" name="school" placeholder="学校の名前を入力してください" required>
+        </div>
+        <div class="field">
+            <div class="label label_year" for="year" required><ruby><rb>学年</rb><rt>がくねん</rt></ruby><br></div>
+            <input class="kokuban" id="students_form" type="text" name="yaer" placeholder="何年生ですか？" required>
+        </div>
+        <div class="field">
+            <div class="label label_message" for="message" required><ruby><rb>相談</rb><rt>そうだん</rt></ruby>したいこと<br></div>
+            <input class="kokuban kokuban_about" id="students_form" type="text" name="about" placeholder="気になっていることを書いてね" required>
+        </div>
+        <button class="button-glow" type="submit" class="btn_primary"><ruby><rb>送信</rb><rt>そうしん</rt></ruby></button>
+    </form> -->
+
+    <form class="students_form" method="POST" enctype="multipart/form-data" onSubmit="return check()">
+        <div class="field">
+            <div class="label label_name" for="name">お<ruby><rb>名前</rb><rt>なまえ</rt></ruby><br></div>
+            <input class="kokuban" id="students_form" type="text" name="name" placeholder="あなたのお名前を入力してください" required title="must be alphanumeric in 6-12 chars">
+        </div>
+        <div class="field">
+            <div class="label label_year" for="year" required><ruby><rb>学年</rb><rt>がくねん</rt></ruby><br></div>
+            <!-- <input class="kokuban" id="students_form" type="text" name="yaer" placeholder="何年生ですか？" required> -->
+            <select class="kokuban" id="students_form" name="yaer" required>
+                <option value="">何年生ですか？</option>
+                <option value="1">1年生</option>
+                <option value="2">2年生</option>
+                <option value="3">3年生</option>
+                <option value="4">4年生</option>
+                <option value="5">5年生</option>
+                <option value="6">6年生</option>
+            </select>
+        </div>
+        <div class="field">
+            <div class="label label_message" for="message" required><ruby><rb>相談</rb><rt>そうだん</rt></ruby>したいこと<br></div>
+            <!-- <input class="kokuban kokuban_about" id="students_form" type="text" name="about" placeholder="気になっていることを書いてね" required> -->
+            <textarea class="kokuban kokuban_about" id="students_form" name="about" required placeholder="気になっていることを書いてね" onkeyup="count_down(this);"></textarea>
+            <p class ="string_count" id="count2">あと2000文字入力できます。</p>
+        </div>
+        <!-- <div class="field">
+            <label for="image">Choose a profile picture:</label>
+            <input type="file"
+       id="image" name="image"
+       accept="image/png, image/jpeg">
+        </div> -->
+        <button class="button-glow" type="submit" class="btn_primary"><ruby><rb>送信</rb><rt>そうしん</rt></ruby></button>
+    </form>
+</div>
+{% endblock content %}
+<script>
+
+var formElement = document.getElementById('students_form');
+
+window.onload = function() {
+    formElement.reset();
+  }
+
+function checkSubmit() {
+	return confirm("送信しても良いですか？");
+}
+
+</script>

@@ -1,0 +1,152 @@
+{% extends "base.html" %}
+{% block content %}
+<script language="JavaScript" type="text/JavaScript">
+    function count_down(obj) {
+        var element = document.getElementById('count2');
+        var currentTextNum = obj.value.length;
+        element.innerHTML = '<p>あと' + (2000 - currentTextNum) + '<ruby><rb>文字入力</rb><rt>もじにゅうりょく</rt></ruby>できます。';
+
+        if (2000 - obj.value.length < 0) {
+            element.style.color = 'red';
+        } else {
+            element.style.color = 'black';
+        }
+    }
+
+     function check(){
+
+        if(window.confirm('送信してよろしいですか？')){ // 確認ダイアログを表示
+
+    return true; // 「OK」時は送信を実行
+
+    }
+    else{ // 「キャンセル」時の処理
+
+        window.alert('キャンセルされました'); // 警告ダイアログを表示
+        return false; // 送信を中止
+    }
+}
+</script>
+<div class="form_main">
+    
+    <form class="students_form" method="POST" enctype="multipart/form-data" onSubmit="return check()">
+        <div class="label label_feeling" for="feeling">いまのきもちは？</div>
+        <div class="form_container">
+        <div class="radio-tile-group">
+            <div class="input-container">
+              <input id="happy" class="radio-button" type="radio" name="feeling" value="うれしい" required/>
+              <div class="radio-tile">
+                <div class="icon">
+                  <svg height="150" width="150" xmlns="http://www.w3.org/1999/xlink">
+                    <path d="M0 0h64v64H0z" fill="none"/>
+                    <path d="M75 150c41.421 0 75-33.579 75-75s-33.579-75-75-75-75 33.579-75 75 33.579 75 75 75zM75 14.063c33.655 0 60.938 27.283 60.938 60.938s-27.283 60.938-60.938 60.938-60.938-27.283-60.938-60.938 27.283-60.938 60.938-60.938zM37.5 46.875c0-5.178 4.197-9.375 9.375-9.375s9.375 4.197 9.375 9.375c0 5.178-4.197 9.375-9.375 9.375s-9.375-4.197-9.375-9.375zM93.75 46.875c0-5.178 4.197-9.375 9.375-9.375s9.375 4.197 9.375 9.375c0 5.178-4.197 9.375-9.375 9.375s-9.375-4.197-9.375-9.375zM103.139 91.884l12.060 7.236c-8.198 13.633-23.132 22.755-40.199 22.755s-32.002-9.122-40.199-22.755l12.060-7.236c5.738 9.543 16.193 15.929 28.139 15.929s22.401-6.386 28.139-15.929z"></path>
+                  </svg>
+                </div>
+                <label for="happy" class="radio-tile-label">うれしい</label>
+              </div>
+            </div>
+        
+            <div class="input-container">
+              <input id="angry" class="radio-button" type="radio" name="feeling" value="おこってる" required/>
+              <div class="radio-tile">
+                <div class="icon">
+                    <svg height="150" width="150" xmlns="http://www.w3.org/1999/xlink">
+                    <path d="M0 0h64v64H0z" fill="none"/>
+                    <path d="M75 150c41.421 0 75-33.579 75-75s-33.579-75-75-75-75 33.579-75 75 33.579 75 75 75zM75 14.063c33.655 0 60.938 27.283 60.938 60.938s-27.283 60.938-60.938 60.938-60.938-27.283-60.938-60.938 27.283-60.938 60.938-60.938zM103.139 114.366c-5.738-9.543-16.193-15.929-28.139-15.929s-22.401 6.386-28.139 15.929l-12.060-7.236c8.197-13.633 23.132-22.755 40.199-22.755s32.002 9.122 40.199 22.755l-12.060 7.236zM112.36 41.051c0.628 2.511-0.899 5.056-3.41 5.684-2.582 0.652-5.643 1.775-8.34 3.127 1.56 1.674 2.516 3.919 2.516 6.388 0 5.178-4.197 9.375-9.375 9.375s-9.375-4.197-9.375-9.375c0-0.171 0.005-0.341 0.014-0.51 0.298-6.951 6.623-11.564 11.952-14.229 5.089-2.544 10.122-3.817 10.334-3.87 2.512-0.628 5.056 0.899 5.684 3.411zM37.64 41.051c0.628-2.512 3.173-4.039 5.684-3.411 0.212 0.053 5.245 1.326 10.334 3.87 5.329 2.665 11.654 7.278 11.952 14.229 0.009 0.169 0.014 0.339 0.014 0.51 0 5.178-4.197 9.375-9.375 9.375s-9.375-4.197-9.375-9.375c0-2.469 0.956-4.713 2.516-6.388-2.697-1.352-5.758-2.476-8.34-3.127-2.511-0.628-4.038-3.173-3.41-5.684z"></path>
+                  </svg>
+                </div>
+                <label for="angry" class="radio-tile-label">おこってる</label>
+              </div>
+            </div>
+        
+            <div class="input-container">
+              <input id="sad" class="radio-button" type="radio" name="feeling" value="かなしい" required/>
+              <div class="radio-tile">
+                <div class="icon">
+                    <svg height="150" width="150" xmlns="http://www.w3.org/1999/xlink">
+                    <path d="M75 150c41.421 0 75-33.579 75-75s-33.579-75-75-75-75 33.579-75 75 33.579 75 75 75zM75 14.063c33.655 0 60.938 27.283 60.938 60.938s-27.283 60.938-60.938 60.938-60.938-27.283-60.938-60.938 27.283-60.938 60.938-60.938z"></path>
+                    <path d="M117.188 56.25h-18.75c-2.589 0-4.688-2.099-4.688-4.688s2.099-4.688 4.688-4.688h18.75c2.589 0 4.688 2.099 4.688 4.688s-2.099 4.688-4.688 4.688z"></path>
+                    <path d="M51.563 56.25h-18.75c-2.589 0-4.688-2.099-4.688-4.688s2.099-4.688 4.688-4.688h18.75c2.589 0 4.688 2.099 4.688 4.688s-2.099 4.688-4.688 4.688z"></path>
+                    <path d="M89.063 125.391c-1.2 0-2.399-0.458-3.314-1.373-0.671-0.671-4.31-2.142-10.748-2.142s-10.077 1.471-10.748 2.142c-1.83 1.83-4.799 1.83-6.629 0s-1.831-4.799 0-6.629c4.412-4.412 13.622-4.888 17.377-4.888s12.965 0.476 17.377 4.889c1.831 1.83 1.831 4.799 0 6.629-0.915 0.915-2.115 1.373-3.314 1.373z"></path>
+                    <path d="M107.813 84.375c-2.589 0-4.688-2.099-4.688-4.688v-9.375c0-2.589 2.099-4.688 4.688-4.688s4.688 2.099 4.688 4.688v9.375c0 2.589-2.099 4.688-4.688 4.688z"></path>
+                    <path d="M107.813 112.5c-2.589 0-4.688-2.099-4.688-4.688v-9.375c0-2.589 2.099-4.688 4.688-4.688s4.688 2.099 4.688 4.688v9.375c0 2.589-2.099 4.688-4.688 4.688z"></path>
+                    <path d="M42.188 84.375c-2.589 0-4.688-2.099-4.688-4.688v-9.375c0-2.589 2.099-4.688 4.688-4.688s4.688 2.099 4.688 4.688v9.375c0 2.589-2.099 4.688-4.688 4.688z"></path>
+                    <path d="M42.188 112.5c-2.589 0-4.688-2.099-4.688-4.688v-9.375c0-2.589 2.099-4.688 4.688-4.688s4.688 2.099 4.688 4.688v9.375c0 2.589-2.099 4.688-4.688 4.688z"></path>
+                    <path d="M0 0h64v64H0z" fill="none"/>
+                  </svg>
+                </div>
+                <label for="sad" class="radio-tile-label">かなしい</label>
+              </div>
+            </div>
+        
+            <div class="input-container">
+              <input id="worries" class="radio-button" type="radio" name="feeling" value="なやんでる" required/>
+              <div class="radio-tile">
+                <div class="icon">
+                    <svg height="150" width="150" xmlns="http://www.w3.org/1999/xlink">
+                    <path d="M75 150c41.421 0 75-33.579 75-75s-33.579-75-75-75-75 33.579-75 75 33.579 75 75 75zM75 14.063c33.655 0 60.938 27.283 60.938 60.938s-27.283 60.938-60.938 60.938-60.938-27.283-60.938-60.938 27.283-60.938 60.938-60.938zM37.5 46.875c0-5.178 4.197-9.375 9.375-9.375s9.375 4.197 9.375 9.375c0 5.178-4.197 9.375-9.375 9.375s-9.375-4.197-9.375-9.375zM93.75 46.875c0-5.178 4.197-9.375 9.375-9.375s9.375 4.197 9.375 9.375c0 5.178-4.197 9.375-9.375 9.375s-9.375-4.197-9.375-9.375zM46.861 114.366l-12.060-7.236c8.198-13.633 23.132-22.755 40.199-22.755s32.001 9.122 40.199 22.755l-12.060 7.236c-5.738-9.543-16.193-15.929-28.139-15.929s-22.401 6.386-28.139 15.929z"></path>
+                    <path d="M0 0h64v64H0z" fill="none"/>
+                  </svg>
+                </div>
+                <label for="worries" class="radio-tile-label">なやんでる</label>
+              </div>
+            </div>
+          </div>
+        </div>
+          
+        <div class="field">
+            <div class="label label_what" for="what">どんなことで？</div>
+            <div class="radioarea">
+            <input id="radio1" class="radiobutton" name="what" type="radio" value="家族の事" required/>
+            <label class="trouble what_label" for="radio1"><ruby><rb>家族</rb><rt>かぞく</rt></ruby>のこと</label>
+            <input id="radio2" class="radiobutton" name="what" type="radio" value="友達のこと" required/>
+            <label class="angry what_label" for="radio2"><ruby><rb>友達</rb><rt>ともだち</rt></ruby>のこと</label> 
+            <input id="radio3" class="radiobutton" name="what" type="radio" value="自分のこと" required/>
+            <label class="sad what_label" for="radio3"><ruby><rb>自分</rb><rt>じぶん</rt></ruby>のこと</label>
+            <input id="radio4" class="radiobutton" name="what" type="radio" value="勉強のこと" required/>
+            <label class="happy what_label" for="radio4"><ruby><rb>勉強</rb><rt>べんきょう</rt></ruby>のこと</label>
+            <input id="radio5" class="radiobutton" name="what" type="radio" value="その他" required/>
+            <label class="other what_label" for="radio5">&nbsp;そ&nbsp;の&nbsp;<ruby><rb>他</rb><rt>た</rt></ruby>&nbsp;</label></div>
+        </div>
+
+        <div class="field">
+            <div class="label label_year" for="year"><ruby><rb>学年</rb><rt>がくねん</rt></ruby></div>
+            <div class="radioarea_year">
+            <input id="year1" class="radiobutton_year" name="year" type="radio" value="1" required/>
+            <label class="year_radio" for="year1">1<ruby><rb>年生</rb><rt>ねんせい</rt></ruby></label>
+            <input id="year2" class="radiobutton_year" name="year" type="radio" value="2" required/>
+            <label class="year_radio" for="year2">2<ruby><rb>年生</rb><rt>ねんせい</rt></ruby></label> 
+            <input id="year3" class="radiobutton_year" name="year" type="radio" value="3" required/>
+            <label class="year_radio" for="year3">3<ruby><rb>年生</rb><rt>ねんせい</rt></ruby></label>
+            <input id="year4" class="radiobutton_year" name="year" type="radio" value="4" required/>
+            <label class="year_radio" for="year4">4<ruby><rb>年生</rb><rt>ねんせい</rt></ruby></label>
+            <input id="year5" class="radiobutton_year" name="year" type="radio" value="5" required/>
+            <label class="year_radio" for="year5">5<ruby><rb>年生</rb><rt>ねんせい</rt></ruby></label> 
+            <input id="year6" class="radiobutton_year" name="year" type="radio" value="6" required/>
+            <label class="year_radio" for="year6">6<ruby><rb>年生</rb><rt>ねんせい</rt></ruby></label></div>        
+        </div>
+
+        <div class="field">
+            <div class="label label_name" for="name">お<ruby><rb>名前</rb><rt>なまえ</rt></ruby><br></div>
+            <span class="caution">※ヒミツなら<ruby><rb>入力</rb><rt>にゅうりょく</rt></ruby>しなくてもいいです！</apan><br>
+            <input class="kokuban" id="students_form" type="text" name="name" placeholder="なまえをかいてね！" title="must be alphanumeric in 6-12 chars">
+        </div>
+
+        <div class="field">
+            <div class="label label_message" for="message" ><ruby><rb>相談</rb><rt>そうだん</rt></ruby>したいこと</div>
+            <span class="caution">※ヒミツは<ruby><rb>守</rb><rt>まも</rt></ruby>ります。あんしんしてそうだんしてね！</span><br>
+            <textarea class="kokuban kokuban_about" id="students_form" name="about"  placeholder="そうだんしたいことをじゆうにかいてね！" onkeyup="count_down(this);"></textarea>
+            <p class ="string_count" id="count2">あと2000<ruby><rb>文字入力</rb><rt>もじにゅうりょく</rt></ruby>できます。</p>
+        </div>
+        <button class="button-glow" type="submit" class="btn_primary"><ruby><rb>送信</rb><rt>そうしん</rt></ruby></button>
+    </form>
+</div>
+{% endblock content %}
+<script>
+var formElement = document.getElementById('students_form');
+
+window.onload = function() {
+    formElement.reset();
+  }
+
+</script>

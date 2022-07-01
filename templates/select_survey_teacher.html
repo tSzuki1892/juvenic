@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="select_students_main">
+    <h1>アンケート一覧</h1>
+    <div class="survey_area"> 
+        <table class="contact-table">
+            <tr>
+                <th>クラス</th>
+                <th>アンケート</th>
+                <th>タイムスタンプ</th>
+            </tr>
+            <tr>
+                <td class="form_title ">5年2組</td>
+                <td class="form_body">
+                    <a href="https://forms.gle/g9u8HPqXWmybmHgPA">お家について</a>
+                </td>
+                <td class="form_title">202203201450</td>
+            </tr>
+            <tr>
+                <td class="form_title">3年1組</td>
+                <td class="form_body">
+                    <a href="https://forms.gle/g9u8HPqXWmybmHgPA">朝ごはんについて</a>
+                </td>
+                <td class="form_title">202203211011</td>
+            </tr>
+            <tr>
+                <td class="form_title">6年3組</td>
+                <td class="form_body">
+                    <a href="https://forms.gle/g9u8HPqXWmybmHgPA">不審者目撃ついて</a>
+                </td>
+                <td class="form_title">202203200945</td>
+            </tr>
+        </table>
+        <button class="button-glow" onclick="">アンケート作成</button>
+    </div>
+</div>
+{% endblock content %}
